@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ros_rust_app_demo</name>
+  <version>0.1.0</version>
+  <description>Minimal ROS Rust binary depending on ros_rust_lib_demo.</description>
+  <maintainer email="test@example.com">Test User</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- ROS-level edge: drives buildfarm topological order and apt-install of
+       ros-rolling-ros-rust-lib-demo into B's binarydeb container. Cargo-level
+       edge is in Cargo.toml; pallet-patcher bridges the two. -->
+  <depend>ros_rust_lib_demo</depend>
+
+  <export>
+    <build_type>cargo</build_type>
+  </export>
+</package>
